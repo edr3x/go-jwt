@@ -18,6 +18,8 @@ func main() {
 
     r.GET("/test", controllers.Test)
 
+    r.POST("/signup", controllers.SignUp)
+
     r.Run()
 
 }
