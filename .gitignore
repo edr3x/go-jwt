@@ -1,0 +1,11 @@
+# Dotenv
+.env
+
+# Binaries for programs and plugins
+
+*.exe
+*.exe~
+*.dylib
+*.dll
+*.so
+*.test
