@@ -33,5 +33,6 @@ CompileDaemon -command="./go-jwt"
 
 ```.env
     PORT=5050
+    SECRET =asjgkap_oiser-lkdiweoruowoabkgwaedssd,aeki932wklhj9230jfdkfsdhu-092unkn
     DB_URL ="host=localhost user=postgres password=postgres dbname=postgres port=5432 sslmode=disable"
 ```

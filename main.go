@@ -5,6 +5,7 @@ import (
 
 	"edr3x/go-jwt/controllers"
 	"edr3x/go-jwt/initializers"
+    "edr3x/go-jwt/middlewares"
 )
 
 func init(){
@@ -21,6 +22,8 @@ func main() {
     r.POST("/signup", controllers.SignUp)
 
     r.POST("/login", controllers.Login)
+
+    r.GET("/validatedPath", middlewares.RequireAuth, controllers.Validate)
 
     r.Run()
 
