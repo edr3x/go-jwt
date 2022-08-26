@@ -7,6 +7,8 @@ import (
 	"edr3x/go-jwt/initializers"
 )
 
+// This branch is for future to set up server faster
+
 func init(){
    initializers.LoadEnv() 
    initializers.ConnectToDB()
