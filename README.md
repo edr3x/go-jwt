@@ -2,10 +2,10 @@
 
 ## Project Initialization 
 
-- first we have to make `go.mod` file which is like `package.json` for Node
+- first we have to make `go.mod` file which is like `package.json` for Node.js
 
 ```sh
-    go mod init edr3x/gin-gorm
+go mod init edr3x/go-jwt
 ```
 
 ## Now we install necessary packages
@@ -21,18 +21,18 @@ go get -u golang.org/x/crypto/bcrypt
 go get -u github.com/golang-jwt/jwt/v4
 ```
 
-## Now to Run the program
+## `.env` file 
+
+```.env
+PORT=5050
+SECRET =asjgkap_oiser-lkdiweoruowoabkgwaedssd,aeki932wklhj9230jfdkfsdhu-092unkn
+DB_URL ="host=localhost user=postgres password=postgres dbname=postgres port=5432 sslmode=disable"
+```
+
+## Finally to Run the program
 
 ```sh
 CompileDaemon -command="./go-jwt"
 ```
 
-> Here `go-jwt` is the module name we set up during the initialization of the project
-
-## `.env` file 
-
-```.env
-    PORT=5050
-    SECRET =asjgkap_oiser-lkdiweoruowoabkgwaedssd,aeki932wklhj9230jfdkfsdhu-092unkn
-    DB_URL ="host=localhost user=postgres password=postgres dbname=postgres port=5432 sslmode=disable"
-```
+> Here `go-jwt` is the project name we had set during project initialization
