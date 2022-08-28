@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"edr3x/go-jwt/initializers"
+	"edr3x/go-jwt/config"
 	"edr3x/go-jwt/models"
 	"net/http"
 	"os"
@@ -46,7 +46,7 @@ func SignUp(c *gin.Context){
 
     //Create the user
     user := models.User{Email: body.Email, Password: string(hashedPass)}
-    result := initializers.DB.Create(&user)
+    result := config.DB.Create(&user)
 
     if result.Error != nil{
         c.JSON(http.StatusBadRequest, gin.H{
@@ -76,7 +76,7 @@ func Login(c *gin.Context){
 
     // Look up requested user in database
     var user models.User
-    initializers.DB.First(&user, "email = ?", body.Email)
+    config.DB.First(&user, "email = ?", body.Email)
 
     if user.ID == 0{
         c.JSON(http.StatusBadRequest, gin.H{

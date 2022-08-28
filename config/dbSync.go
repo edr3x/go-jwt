@@ -1,4 +1,4 @@
-package initializers
+package config
 
 import "edr3x/go-jwt/models"
 

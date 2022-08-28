@@ -1,7 +1,7 @@
 package middlewares
 
 import (
-	"edr3x/go-jwt/initializers"
+	"edr3x/go-jwt/config"
 	"edr3x/go-jwt/models"
 	"fmt"
 	"net/http"
@@ -38,7 +38,7 @@ func RequireAuth(c *gin.Context){
 
         // Find the user from token
         var user models.User
-        initializers.DB.First(&user, claims["sub"])
+        config.DB.First(&user, claims["sub"])
 
         if user.ID == 0{
             c.AbortWithStatus(http.StatusUnauthorized)

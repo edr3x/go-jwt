@@ -4,14 +4,14 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"edr3x/go-jwt/controllers"
-	"edr3x/go-jwt/initializers"
+	"edr3x/go-jwt/config"
     "edr3x/go-jwt/middlewares"
 )
 
 func init(){
-   initializers.LoadEnv() 
-   initializers.ConnectToDB()
-   initializers.DbSync()
+   config.LoadEnv()
+   config.ConnectToDB()
+   config.DbSync()
 }
 
 func main() {
