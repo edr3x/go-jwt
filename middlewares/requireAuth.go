@@ -18,6 +18,9 @@ func RequireAuth(c *gin.Context){
 
     if err != nil{
         c.AbortWithStatus(http.StatusUnauthorized)
+        c.IndentedJSON(http.StatusUnauthorized,gin.H{
+            "error":"Unauthenticated",
+        })
     }
     
     // Decode  and validate the cookie
@@ -42,6 +45,10 @@ func RequireAuth(c *gin.Context){
 
         if user.ID == 0{
             c.AbortWithStatus(http.StatusUnauthorized)
+            c.IndentedJSON(http.StatusUnauthorized,gin.H{
+                 "error":"Unauthenticated",
+        })
+
         }
 
         // Attach to request
@@ -52,6 +59,10 @@ func RequireAuth(c *gin.Context){
 
     } else {
     	c.AbortWithStatus(http.StatusUnauthorized)
+        c.IndentedJSON(http.StatusUnauthorized,gin.H{
+            "error":"Unauthenticated",
+        })
+
     }
 }
 

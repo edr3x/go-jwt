@@ -1,30 +1,23 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
-
-	"edr3x/go-jwt/controllers"
 	"edr3x/go-jwt/config"
-    "edr3x/go-jwt/middlewares"
+	"edr3x/go-jwt/routes"
+
+	"github.com/gin-gonic/gin"
 )
 
-func init(){
+func init(){ 
    config.LoadEnv()
    config.ConnectToDB()
    config.DbSync()
 }
 
 func main() {
-    r := gin.Default()
+	r := gin.Default()
 
-    r.GET("/test", controllers.Test)
+	routes.AuthRoute(r)
 
-    r.POST("/signup", controllers.SignUp)
-
-    r.POST("/login", controllers.Login)
-
-    r.GET("/validatedPath", middlewares.RequireAuth, controllers.Validate)
-
-    r.Run()
+	r.Run()
 
 }

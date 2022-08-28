@@ -114,8 +114,10 @@ func Login(c *gin.Context){
     c.SetCookie("Authorization", tokenString, 3600 * 24 *30, "", "", false, true)
               //name           , value      , maxAge    ,path, domain,secure, httpOnly
 
-    // Send jwt token back to user
-    c.IndentedJSON(http.StatusOK,gin.H{})
+    // Response
+    c.IndentedJSON(http.StatusOK,gin.H{
+        "message": "Logged in Successfully",
+    })
 }
 
 func Validate(c *gin.Context){
