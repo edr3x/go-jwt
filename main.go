@@ -15,7 +15,8 @@ func init(){
 
 func main() {
 	r := gin.Default()
-
+    
+    routes.CheckRoute(r)
 	routes.AuthRoute(r)
 
 	r.Run()

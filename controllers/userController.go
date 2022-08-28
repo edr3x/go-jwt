@@ -12,13 +12,6 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-// Test
-func Test(c *gin.Context) {
-    c.IndentedJSON(200,gin.H{
-        "message": "Success",
-    })
-}
-
 // Sign up Controller
 func SignUp(c *gin.Context){
     // Get the email and password from request body

@@ -8,8 +8,6 @@ import (
 )
 
 func AuthRoute(r *gin.Engine){
-    r.GET("/test", controllers.Test)
-
     r.POST("/signup", controllers.SignUp)
 
     r.POST("/login", controllers.Login)
